@@ -7,16 +7,18 @@ Created on Tue Mar 30 14:52:25 2021
 
 import math
 
-def fizz_buzz(z):
-    if z%15 == 0:
+
+def fizz_buzz(zahl):
+    if zahl % 15 == 0:
         print("fizzbuzz")
-    elif z%3 == 0:
+    elif zahl % 3 == 0:
         print("fizz")
-    elif z%5 == 0:
+    elif zahl % 5 == 0:
         print("buzz")
     else:
         a = str(z)
         print(a)
+
 
 fizz_buzz(-100)
 
@@ -33,10 +35,10 @@ t = 1.23             # s
 
 # Ihre Implementierung folgt hier ↓
 
+
 def harm_oszi(omega, delta):
-    x = 10 * (math.exp(-delta * 1.23) ) * math.sin(1.23 * math.sqrt(omega ** 2 - delta ** 2))
-    return x
-    
+    ergebnis = 10 * (math.exp(-delta * 1.23)) * math.sin(1.23 * math.sqrt(omega ** 2 - delta ** 2))
+    return ergebnis
 
 
 # Speichern Sie die Ergebnisse Ihrer Berechnung in die folgenden Variablen:
@@ -47,9 +49,6 @@ x_3 = harm_oszi(omega0_3, delta_3)
 print(x_1)
 print(x_2)
 print(x_3)
-
-
-
 
 
 # Implementieren Sie die Klasse hier ↓
@@ -73,7 +72,8 @@ class Rectangle:
     
     def __eq__(self, other):
         return self.a == other.a and self.b == other.b 
-    
+
+
 pink_car = Rectangle(2, 3)
 blue_car = Rectangle(2, 3)
 
@@ -83,29 +83,22 @@ print(pink_car == blue_car)
 print(pink_car < blue_car)
 print(pink_car <= blue_car)
 print(pink_car * z)
-
-
-
-
 print(math.exp(3))
 print(math.sqrt(4))
 
 
-
 # Aufgabe a)
-def pi_leibniz(N):
+def pi_leibniz(number):
     m = 0
-    for i in range (0, N+1, 1):
-        m += (-1)**i / (2*i +1)
+    for i in range(0, number+1, 1):
+        m += (-1)**i / (2*i + 1)
     return m
+
 
 # Aufgabe b)
 pi = pi_leibniz(1000000) * 4
 print(pi_leibniz(1000000) * 4)
 print(pi_leibniz(0) * 4)
-
-
-
 
 for x in (1, 2, 3):
     print(x)
@@ -128,33 +121,23 @@ def fib_iter(n):
     f_1 = 1
     k = 2
     while k < (n + 1):
-        l = f_0 + f_1
+        line = f_0 + f_1
         f_0 = f_1
-        f_1 = l
+        f_1 = line
         k += 1
         
     return f_1
 
-print(fib_iter(10))
 
+print(fib_iter(10))
 
 
 def fib_seq(n):
     liste = [0]
-    for i in range (1, n+1, 1):
+    for i in range(1, n+1, 1):
         liste.append(fib_iter(i))
         
     return liste
 
 
 print(fib_seq(10))
-
-
-
-
-
-
-
-
-
-
