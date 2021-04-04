@@ -90,3 +90,33 @@ plt.xlabel("T[s]")
 
 
 plt.show
+
+
+
+
+
+#Aufgabe 3
+
+x_i = numpy.array((4.334, 10.274, 15.752))
+y_i = numpy.array((5.4, 6.5, 4.5))
+
+x = numpy.array([[4.334**2, 4.334, 1], [10.274**2, 10.274, 1], [15.752**2, 15.752, 1]])
+
+a, b, c = numpy.linalg.solve(x, y_i)
+print(a, b, c)
+
+y0 = c
+alpha = math.atan(b)
+v0 = math.sqrt(-9.81/(2*a))/math.cos(alpha)
+p = numpy.polynomial.Polynomial((c, b, a))
+
+x1, x2 = numpy.polynomial.Polynomial.roots(p)
+#print(x1, x2)
+xw = x2
+
+pd = numpy.polynomial.Polynomial.deriv(p)
+#print(pd)
+xe = numpy.polynomial.Polynomial.roots(pd)
+#print(xe)
+ye = p(xe)
+#print(ye)
