@@ -62,10 +62,10 @@ Intervalle.pop()
 plt.plot(Intervalle, hist, "mo", markersize=2)
 plt.ylabel("absolute Häufigkeit")
 plt.xlabel("T[s]")
-# error = math.sqrt(h1)
+error = numpy.sqrt(h1)
 
 # fig, (ax0, ax1) = plt.subplots(nrows=2, sharex=True)
-# plt.errorbar(Intervalle, h1, yerr = error, fmt='-o')
+plt.errorbar(Intervalle, h1, yerr = error, fmt='-o')
 
 # print(hist)
 # print(Intervalle)
